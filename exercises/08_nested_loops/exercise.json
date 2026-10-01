@@ -1,0 +1,6 @@
+{
+  "name": "巢狀迴圈",
+  "difficulty": "★★",
+  "topics": ["巢狀迴圈", "StringBuilder", "組合"],
+  "hint": "row 的每兩個項目之間要補空白，可以只在 i > 1 的時候 append 一個空白，\n最後回傳前記得 trim() 去掉尾端空白。\ncountPairs 目前把 i == j 的情況也算進去了，從 j 開始應該是 i + 1。\nsumMultiples 要判斷 i 是不是 3 的倍數再累加。"
+}

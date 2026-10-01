@@ -1,0 +1,6 @@
+{
+  "name": "equals 與 hashCode",
+  "difficulty": "★★★",
+  "topics": ["equals", "hashCode", "instanceof"],
+  "hint": "金額相同但貨幣不同的兩筆錢並不相等，所以 equals 要同時比較 amount 和 currency。\n記得要有 equals 就應該讓 hashCode 也反映相同的欄位，\n否則放進 HashMap/HashSet 會找不到。\npattern matching：if (!(o instanceof Money other)) 會同時幫你做型別檢查和轉型。"
+}

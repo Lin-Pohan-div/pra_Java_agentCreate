@@ -1,0 +1,6 @@
+{
+  "name": "類別與封裝",
+  "difficulty": "★★",
+  "topics": ["類別", "建構式", "this", "存取修飾"],
+  "hint": "this.width = width 才是指「這個物件的欄位」；\n單純 width = width 兩邊都會指向參數，等於什麼都沒做。\nscale 目前只改了一半，寬和高都要縮放。\n欄位記得加上 private，再用存取方法 (getter) 對外開放。"
+}

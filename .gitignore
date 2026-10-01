@@ -1,0 +1,20 @@
+# 建置輸出
+build/
+target/
+out/
+
+# 練習進度與編譯產物
+.javalings/
+**/.javalings-out/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# 作業系統
+.DS_Store
+Thumbs.db

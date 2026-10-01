@@ -1,0 +1,6 @@
+{
+  "name": "ArrayList",
+  "difficulty": "★★",
+  "topics": ["ArrayList", "泛型", "集合"],
+  "hint": "add(...)、sum(...) 少了一個分號。\nevens 要篩選：把偶數加進新的 ArrayList 然後回傳它。\n判斷偶數用 n % 2 == 0。\n不要直接回傳參數本身，否則會改到呼叫端的資料。"
+}

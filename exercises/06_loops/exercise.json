@@ -1,0 +1,6 @@
+{
+  "name": "迴圈 for / while",
+  "difficulty": "★★",
+  "topics": ["for", "while", "Character"],
+  "hint": "sumTo 少了一個分號。\ncountLetters 不是數字元也要能處理：用 Character.isLetter(s.charAt(i)) 判斷後再累加。\ncountDown 的 while 條件沒有讓 from 減少，記得在迴圈裡更新變數，否則會無限迴圈。"
+}

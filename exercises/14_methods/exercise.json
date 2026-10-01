@@ -1,0 +1,6 @@
+{
+  "name": "方法重載與可變參數",
+  "difficulty": "★★★",
+  "topics": ["overloading", "varargs"],
+  "hint": "重載的規則：方法名稱相同，但參數「個數或型別」不同。\n注意 add(\"ab\", 3) 會選到哪一個？兩個都符合時 Java 會挑最精確的那個，\n所以 String 版本必須真的做字串重複。\n可變參數寫成 int... values，在方法內就是一個 int[]。"
+}

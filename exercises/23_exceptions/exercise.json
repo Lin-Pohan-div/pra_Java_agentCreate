@@ -1,0 +1,6 @@
+{
+  "name": "丟出與捕捉例外",
+  "difficulty": "★★★",
+  "topics": ["例外", "throw", "try/catch", "Pattern"],
+  "hint": "先檢查格式再用 parseInt，這樣才會丟出你自己定義的例外，而不是\nNumberFormatException（它的訊息是英文的「For input string」）。\n訊息要包含「不是數字」四個字。\nPattern.matches(\"-?\\\\d+\", text) 可以判斷整數字串，記得跳脫反斜線。\nparseOrDefault 要用 try { ... } catch (IllegalArgumentException e) { return fallback; } 來處理。"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "綜合題：record 訂單",
+  "difficulty": "★★★★★",
+  "topics": ["record", "Stream", "例外", "綜合"],
+  "hint": "record 會自動產生 private final 欄位、建構式、存取方法、equals、hashCode 和 toString，\n所以你只要寫「額外的」方法就好。\ngrandTotal 用 stream().mapToDouble(Order::total).sum() 可以一行搞定，空清單會自動是 0.0。\nmostExpensive 要用 max()，但 max 回傳 Optional<ListItem>，\n空清單時那個 Optional 是空的，要先 isPresent() 檢查再丟出你自己的例外。\n例外訊息要包含「空」。"
+}

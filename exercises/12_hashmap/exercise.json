@@ -1,0 +1,6 @@
+{
+  "name": "HashMap 統計字數",
+  "difficulty": "★★★",
+  "topics": ["HashMap", "Map", "getOrDefault"],
+  "hint": "count 的迴圈少了一個分號。\ncountWords 要把字轉成小寫再統計，key 才會把 \"A\" 和 \"a\" 算同一個。\naverage 的 total 和 size 都是 int，會做整數除法；請先轉成 double。\ngetOrDefault(word, 0) 可以拿到「目前這個字出現幾次」。"
+}

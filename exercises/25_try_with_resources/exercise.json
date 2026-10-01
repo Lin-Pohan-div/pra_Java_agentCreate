@@ -1,0 +1,6 @@
+{
+  "name": "try-with-resources",
+  "difficulty": "★★★★",
+  "topics": ["IO", "try-with-resources", "BufferedReader"],
+  "hint": "firstLine() 已經示範了正確寫法，countLines() 照著做就行。\ntry (BufferedReader reader = Files.newBufferedReader(Path.of(path), StandardCharsets.UTF_8)) { ... }\n迴圈寫法：while ((line = reader.readLine()) != null) { ... }，\n注意括號不能漏，否則 assignment 會變成條件的一部分。\nreadLine() 讀到檔案結尾會回傳 null。"
+}

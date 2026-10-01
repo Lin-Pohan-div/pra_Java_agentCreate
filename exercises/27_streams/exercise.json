@@ -1,0 +1,6 @@
+{
+  "name": "Stream API",
+  "difficulty": "★★★★",
+  "topics": ["Stream", "Collectors", "partitioningBy"],
+  "hint": "passing 要篩「嚴格大於」，>= 和 > 在這裡差一個人。\npartitioningBy 的第一個參數是 Predicate，回傳型別必須是 boolean，\n現在寫 s -> s 回傳的是 Integer，編譯不過；請改成 s -> s >= threshold。\n第二個參數用 Collectors.counting() 會數出每組有幾筆。\nCollectors.joining(\", \") 會把字串用逗號接起來。"
+}

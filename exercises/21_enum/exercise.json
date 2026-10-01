@@ -1,0 +1,6 @@
+{
+  "name": "列舉 enum",
+  "difficulty": "★★★",
+  "topics": ["enum", "switch", "values"],
+  "hint": "switch 運算式（不是 switch 敘述）的每個分支都要用 -> 開頭，\n而且寫 -> 20; 就已經是回傳值了。\nGREEN 那一行少了 -> ...;。\nlongestWait 找的是「最大」，條件寫反了：應該在 light 比 best 還久時才更新。\nvalues() 會回傳這個 enum 所有值的陣列。"
+}

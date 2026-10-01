@@ -1,0 +1,6 @@
+{
+  "name": "字串常見方法",
+  "difficulty": "★★",
+  "topics": ["字串", "StringBuilder", "字串比較"],
+  "hint": "String 沒有 * 運算子。重複字串請用 String.repeat(int)。\n字串比較要用 equals(...)，== 是比較「是不是同一個參考」。\n轉大寫的方法名是 toUpperCase()，注意大小寫與括號。"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "自訂例外類別",
+  "difficulty": "★★★",
+  "topics": ["自訂例外", "繼承", "例外處理"],
+  "hint": "自訂例外通常繼承 RuntimeException（屬於「unchecked」例外，不用宣告 throws）。\nwithdraw 的邏輯：amount 超過 balance 時丟出 InsufficientFundsException，\n否則 balance -= amount。\n「剛好等於餘額」不算不足，應該可以成功提領。\n訊息裡要帶上被要求的金額，測試會檢查訊息內容。"
+}

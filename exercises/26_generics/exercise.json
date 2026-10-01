@@ -1,0 +1,6 @@
+{
+  "name": "泛型類別",
+  "difficulty": "★★★",
+  "topics": ["泛型", "Function", "型別參數"],
+  "hint": "欄位預設是 null，所以還沒 set() 時 isEmpty() 應該直接檢查 null，\n不要拿 value 和字串 \"null\" 比較。\nmap 的簽章 <R> R map(Function<T, R> mapper) 表示「輸入 T、輸出 R」，\n實作只要 return mapper.apply(value);。\n泛型類別建立物件時 diamond 運算子 new Box<>() 讓編譯器自己推斷型別。"
+}

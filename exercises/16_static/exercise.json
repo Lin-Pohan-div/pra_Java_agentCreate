@@ -1,0 +1,6 @@
+{
+  "name": "static 與實例狀態",
+  "difficulty": "★★★",
+  "topics": ["static", "物件", "狀態"],
+  "hint": "關鍵：value 應該是「每個物件各有一份」，還是「整個類別共用一份」？\ninstances() 是用來數「已經建立幾個物件」，所以那個計數器才需要 static。\n兩個 Counter 各自的 value 應該要互不影響。\nstatic 欄位屬於類別，非 static 欄位屬於物件。"
+}

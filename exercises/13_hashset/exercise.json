@@ -1,0 +1,6 @@
+{
+  "name": "Set 去重",
+  "difficulty": "★★",
+  "topics": ["Set", "LinkedHashSet", "去重"],
+  "hint": "unique 要先 trim() 去掉空白、再 toLowerCase() 轉小寫，順序反過來效果不同。\nSet.add(...) 有個好用的回傳值：true 代表「原本沒有、新加入的」，false 代表「早就有了、重複」。\n用這個回傳值來偵測重複。\nLinkedHashSet 會保留插入順序，所以走訪結果是穩定的。"
+}

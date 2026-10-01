@@ -1,0 +1,6 @@
+{
+  "name": "switch 敘述",
+  "difficulty": "★★",
+  "topics": ["switch", "case", "char"],
+  "hint": "case 後面要寫 : 例如 case 7:。\n沒有 break 會一直往下執行，但這裡每個 case 都直接 return，所以不需要 break。\nisVowel 的 default 應該回 false，因為不是母音就不是母音。\ndescribe 少了 case 2 的分支。"
+}

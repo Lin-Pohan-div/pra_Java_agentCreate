@@ -1,0 +1,37 @@
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class Range implements Iterable<Integer> {
+
+    private final int start;
+    private final int end;
+    private final int step;
+
+    public Range(int start, int end, int step) {
+        this.start = start;
+        this.end = end;
+        this.step = step;
+    }
+
+    @Override
+    public Iterator<Integer> iterator() {
+        return new Iterator<>() {
+
+            private int current = start;
+
+            @Override
+            public boolean hasNext() {
+                return step > 0 ? current < end : current > end
+            }
+
+            @Override
+            public Integer next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                // TODO: 回傳目前的值，並把 current 往前推進 step
+                return current;
+            }
+        };
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "介面與 default 方法",
+  "difficulty": "★★★",
+  "topics": ["介面", "default", "static", "lambda"],
+  "hint": "介面裡宣告抽象方法時只寫簽章，不寫本體，結尾用分號。\n實作類別的方法要加 @Override。\nTag.label() 少了一個結尾符號：framed() 會在外面幫你加上中括號。\n介面也可以有 static 方法，呼叫方式是 Printable.of(...)。"
+}

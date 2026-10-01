@@ -1,0 +1,6 @@
+{
+  "name": "自訂 Iterator",
+  "difficulty": "★★★★",
+  "topics": ["Iterator", "Iterable", "泛型"],
+  "hint": "hasNext() 少了結尾分號；step > 0 和 step < 0 兩個方向都要考慮。\nnext() 的順序很重要：先把目前的值存起來回傳，再把 current 往前推進 step。\n這是「迭代器的協議」——hasNext() 問還有沒有，next() 給出下一個，\n而且 next() 在沒有東西時必須丟出 NoSuchElementException。\n這樣寫就能直接用 for-each：for (int v : new Range(0, 5, 1)) { ... }"
+}
