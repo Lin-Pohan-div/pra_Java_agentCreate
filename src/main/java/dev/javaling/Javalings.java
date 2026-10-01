@@ -186,6 +186,9 @@ public final class Javalings {
      * 全部完成時正常返回（exit code 0），其餘情況持續執行直到 Ctrl+C。
      */
     private static void watch(List<Exercise> exercises, AppState state, List<String> args) throws IOException {
+        if (args.isEmpty()) {
+            scanProgress(exercises, state);
+        }
         Exercise target = resolveOrExit(exercises, state, args);
         boolean clear = true;
         while (true) {
@@ -208,6 +211,45 @@ public final class Javalings {
             Console.dim("監看中：存檔後會自動重新檢查（Ctrl+C 離開）");
             waitForChange(target.source(), seen);
             clear = true;
+        }
+    }
+
+    /**
+     * 依實際檔案內容重建進度：和 .original/ 原題相同的直接視為未完成，
+     * 改過的才編譯測試；最後把目前練習設成第一個未完成的題目。
+     */
+    private static void scanProgress(List<Exercise> exercises, AppState state) throws IOException {
+        List<Exercise> ordered = exercises.stream()
+                .sorted(Comparator.comparingInt(Exercise::order))
+                .toList();
+        String classpath = Console.selfClasspathEntry();
+        for (int i = 0; i < ordered.size(); i++) {
+            Exercise ex = ordered.get(i);
+            Console.raw("\r掃描進度中… " + (i + 1) + "/" + ordered.size() + "  ");
+            if (isUnmodified(ex)) {
+                state.unmarkDone(ex.id());
+            } else if (Verifier.verify(ex, classpath).passed()) {
+                state.markDone(ex.id());
+            } else {
+                state.unmarkDone(ex.id());
+            }
+        }
+        Console.raw("\r" + " ".repeat(30) + "\r");
+        ordered.stream()
+                .filter(ex -> !state.isDone(ex.id()))
+                .findFirst()
+                .ifPresent(ex -> state.setCurrent(ex.id()));
+        state.save();
+    }
+
+    /** 練習檔和 .original/ 的原題完全相同；找不到原題時回傳 false，交給實際檢查判斷。 */
+    private static boolean isUnmodified(Exercise ex) {
+        Path original = ex.dir().resolve(".original").resolve(ex.sourceFileName() + ".orig");
+        try {
+            return Files.isRegularFile(original) && Files.isRegularFile(ex.source())
+                    && Files.mismatch(ex.source(), original) == -1;
+        } catch (IOException e) {
+            return false;
         }
     }
 
