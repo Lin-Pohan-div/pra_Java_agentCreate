@@ -123,7 +123,11 @@ public final class Json {
                 case 'r' -> sb.append('\r');
                 case 't' -> sb.append('\t');
                 case 'u' -> {
-                    sb.append((char) Integer.parseInt(src.substring(pos, pos + 4), 16));
+                    try {
+                        sb.append((char) Integer.parseInt(src.substring(pos, pos + 4), 16));
+                    } catch (NumberFormatException | IndexOutOfBoundsException e) {
+                        throw new IllegalArgumentException("JSON \\u 跳脫字元格式錯誤，位置 " + pos);
+                    }
                     pos += 4;
                 }
                 default -> throw new IllegalArgumentException("不支援的跳脫字元 \\" + esc);
@@ -144,7 +148,11 @@ public final class Json {
         while (pos < src.length() && "-+.eE0123456789".indexOf(src.charAt(pos)) >= 0) {
             pos++;
         }
-        return Double.valueOf(src.substring(start, pos));
+        try {
+            return Double.valueOf(src.substring(start, pos));
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("JSON 數值或格式錯誤，位置 " + start);
+        }
     }
 
     private void skipWhitespace() {

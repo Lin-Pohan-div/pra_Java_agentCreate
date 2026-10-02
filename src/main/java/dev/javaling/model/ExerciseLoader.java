@@ -18,7 +18,11 @@ public final class ExerciseLoader {
     private ExerciseLoader() {
     }
 
-    public static List<Exercise> load(Path root) throws IOException {
+    /**
+     * 載入所有練習。缺少必要檔案的資料夾會靜默略過；檔案數量不明確（例如兩個待修檔）的資料夾
+     * 也會略過，但原因會加進 {@code warnings}，讓出題者知道為什麼題目沒有出現。
+     */
+    public static List<Exercise> load(Path root, List<String> warnings) throws IOException {
         if (!Files.isDirectory(root)) {
             throw new IOException("找不到練習資料夾：" + root.toAbsolutePath());
         }
@@ -30,7 +34,7 @@ public final class ExerciseLoader {
                     .sorted(Comparator.comparing(p -> p.getFileName().toString()))
                     .toList();
             for (Path dir : dirs) {
-                Exercise ex = read(dir);
+                Exercise ex = read(dir, warnings);
                 if (ex != null) {
                     result.add(ex);
                 }
@@ -39,16 +43,15 @@ public final class ExerciseLoader {
         return result;
     }
 
-    private static Exercise read(Path dir) throws IOException {
+    private static Exercise read(Path dir, List<String> warnings) throws IOException {
         String id = dir.getFileName().toString();
         Path meta = dir.resolve("exercise.json");
         if (!Files.isRegularFile(meta)) {
             return null;
         }
-        Map<String, Object> json = Json.parseObject(Files.readString(meta, StandardCharsets.UTF_8));
 
-        Path source = null;
-        Path test = null;
+        List<Path> sources = new ArrayList<>();
+        List<Path> tests = new ArrayList<>();
         try (Stream<Path> files = Files.list(dir)) {
             for (Path f : files.filter(Files::isRegularFile).sorted().toList()) {
                 String name = f.getFileName().toString();
@@ -56,14 +59,28 @@ public final class ExerciseLoader {
                     continue;
                 }
                 if (name.endsWith("Test.java")) {
-                    test = f;
+                    tests.add(f);
                 } else {
-                    source = f;
+                    sources.add(f);
                 }
             }
         }
-        if (source == null || test == null) {
+        if (sources.isEmpty() || tests.isEmpty()) {
             return null;
+        }
+        if (sources.size() > 1 || tests.size() > 1) {
+            warnings.add("略過 " + id + "：每題只能有一個待修的 .java 和一個 *Test.java，目前有 "
+                    + sources.size() + " 個待修檔、" + tests.size() + " 個測試檔。");
+            return null;
+        }
+        Path source = sources.get(0);
+        Path test = tests.get(0);
+
+        Map<String, Object> json;
+        try {
+            json = Json.parseObject(Files.readString(meta, StandardCharsets.UTF_8));
+        } catch (IllegalArgumentException | IndexOutOfBoundsException e) {
+            throw new IOException(id + "/exercise.json 格式錯誤：" + e.getMessage(), e);
         }
 
         int order = 0;
@@ -72,9 +89,10 @@ public final class ExerciseLoader {
             order = Integer.parseInt(digits);
         }
 
-        @SuppressWarnings("unchecked")
-        List<Object> rawTopics = (List<Object>) json.getOrDefault("topics", List.of());
-        List<String> topics = rawTopics.stream().map(String::valueOf).toList();
+        Object rawTopics = json.getOrDefault("topics", List.of());
+        List<String> topics = rawTopics instanceof List<?> list
+                ? list.stream().map(String::valueOf).toList()
+                : List.of(String.valueOf(rawTopics));
 
         return new Exercise(
                 id,

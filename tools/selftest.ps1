@@ -34,7 +34,15 @@ $failed = @()
 
 Write-Host "`n== 檢查 1/3：.original/ 的原題應該和練習檔一致 ==" -ForegroundColor Cyan
 foreach ($id in $ids) {
-    $src = Get-ChildItem "exercises\$id" -Filter *.java | Where-Object { $_.Name -notlike '*Test.java' } | Select-Object -First 1
+    # 和 CLI 的載入規則一致：待修檔與測試檔都必須剛好一個，否則 CLI 會略過這題
+    $srcs = @(Get-ChildItem "exercises\$id" -Filter *.java | Where-Object { $_.Name -notlike '*Test.java' })
+    $tsts = @(Get-ChildItem "exercises\$id" -Filter *Test.java)
+    if ($srcs.Count -ne 1 -or $tsts.Count -ne 1) {
+        Write-Host "  $id : 待修檔 $($srcs.Count) 個、測試檔 $($tsts.Count) 個，兩者都必須剛好一個" -ForegroundColor Red
+        $failed += "$id (檔案數量不對)"
+        continue
+    }
+    $src = $srcs[0]
     $original = "exercises\$id\.original\$($src.Name).orig"
     if (-not (Test-Path $original)) {
         Write-Host "  $id : 找不到原題 $original" -ForegroundColor Red
@@ -61,8 +69,13 @@ New-Item -ItemType Directory -Force -Path $stage | Out-Null
 
 foreach ($id in $ids) {
     $dir = "exercises\$id"
-    $src = Get-ChildItem $dir -Filter *.java | Where-Object { $_.Name -notlike '*Test.java' } | Select-Object -First 1
-    $tst = Get-ChildItem $dir -Filter *Test.java | Select-Object -First 1
+    $srcs = @(Get-ChildItem $dir -Filter *.java | Where-Object { $_.Name -notlike '*Test.java' })
+    $tsts = @(Get-ChildItem $dir -Filter *Test.java)
+    if ($srcs.Count -ne 1 -or $tsts.Count -ne 1) {
+        continue  # 檢查 1 已經記錄過
+    }
+    $src = $srcs[0]
+    $tst = $tsts[0]
     $dest = "$stage\$id"
 
     New-Item -ItemType Directory -Force -Path $dest | Out-Null
