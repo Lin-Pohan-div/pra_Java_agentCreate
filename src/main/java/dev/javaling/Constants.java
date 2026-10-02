@@ -7,7 +7,7 @@ public final class Constants {
     }
 
     public static final String NAME = "Javalings";
-    public static final String VERSION = "0.1.0";
+    public static final String VERSION = "0.1.1";
 
     /**
      * 提示訊息中顯示的啟動指令。系統上沒有名為 javalings 的指令，

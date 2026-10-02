@@ -37,6 +37,8 @@ public final class AppState {
                 }
             }
         }
+        // 題目被刪除或改名後，舊 id 不再計入完成數；下次儲存時一併從進度檔移除
+        state.done.removeIf(id -> exercises.stream().noneMatch(e -> e.id().equals(id)));
         if (state.current == null || exercises.stream().noneMatch(e -> e.id().equals(state.current))) {
             state.current = exercises.stream()
                     .filter(e -> !state.done.contains(e.id()))

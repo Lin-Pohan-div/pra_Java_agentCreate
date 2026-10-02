@@ -58,13 +58,15 @@ public final class Javalings {
         }
 
         List<Exercise> exercises;
+        List<String> loadWarnings = new ArrayList<>();
         try {
-            exercises = ExerciseLoader.load(exercisesDir);
+            exercises = ExerciseLoader.load(exercisesDir, loadWarnings);
         } catch (IOException e) {
             Console.error(e.getMessage());
             System.exit(1);
             return;
         }
+        loadWarnings.forEach(Console::warn);
         if (exercises.isEmpty()) {
             Console.error("沒有找到任何練習：" + exercisesDir.toAbsolutePath());
             System.exit(1);
@@ -298,7 +300,9 @@ public final class Javalings {
             }
             case TEST_FAILED -> {
                 Console.error("✗ 可以編譯，但測試沒通過。");
-                if (!result.testOutput().isEmpty()) {
+                if (result.testOutput().isEmpty()) {
+                    Console.dim(result.message());
+                } else {
                     printBlock("測試輸出", result.testOutput());
                 }
                 Console.dim("提示：測試已經寫好了，去調整 " + target.sourceFileName()
