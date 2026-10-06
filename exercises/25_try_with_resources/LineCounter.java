@@ -1,3 +1,5 @@
+// 先讀同資料夾的 README.md，再動手修改這個檔案。
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -13,6 +15,7 @@ public class LineCounter {
     }
 
     public static String firstLine(String path) throws IOException {
+        // TODO: 回傳檔案的第一行（這是 try-with-resources 的參考寫法）
         try (BufferedReader reader = Files.newBufferedReader(Path.of(path), StandardCharsets.UTF_8)) {
             return reader.readLine()
         }

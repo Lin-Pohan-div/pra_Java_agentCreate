@@ -1,3 +1,5 @@
+// 先讀同資料夾的 README.md，再動手修改這個檔案。
+
 public class Matrix {
 
     public static int[][] identity(int n) {
@@ -10,6 +12,7 @@ public class Matrix {
     }
 
     public static int sumOfAll(int[][] m) {
+        // TODO: 回傳矩陣中所有元素的總和，sumOfAll([[1,2],[3,4]]) 應該是 10
         int total = 0;
         for (int[] row : m) {
             for (int v : row) {

@@ -1,3 +1,5 @@
+// 先讀同資料夾的 README.md，再動手修改這個檔案。
+
 public class Animal {
 
     private final String name;
@@ -24,6 +26,7 @@ class Dog extends Animal {
 
     @Override
     public String speak() {
+        // TODO: 狗的叫聲是 "Woof"
         return "Woof";
     }
 }
@@ -36,6 +39,7 @@ class Cat extends Animal {
 
     @Override
     public String speak() {
+        // TODO: 貓的叫聲是 "Mew"
         return "Mew"
     }
 }

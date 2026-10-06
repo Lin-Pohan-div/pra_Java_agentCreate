@@ -1,9 +1,12 @@
+// 先讀同資料夾的 README.md，再動手修改這個檔案。
+
 public class Rectangle {
 
     private double width;
     private double height;
 
     public Rectangle(double width, double height) {
+        // TODO: 把參數的寬和高存進這個物件的欄位
         this.width = width
         this.height = height
     }

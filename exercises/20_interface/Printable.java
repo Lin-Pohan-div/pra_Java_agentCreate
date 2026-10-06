@@ -1,3 +1,5 @@
+// 先讀同資料夾的 README.md，再動手修改這個檔案。
+
 public interface Printable {
 
     // TODO: 這是一個抽象方法：只有宣告、沒有本體，結尾用分號
