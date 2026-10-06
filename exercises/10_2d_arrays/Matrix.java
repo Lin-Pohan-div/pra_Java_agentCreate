@@ -23,7 +23,7 @@ public class Matrix {
         int total = 0;
         // TODO: 累加主對角線，sumMainDiagonal([[1,2],[3,4]]) 應該是 5
         for (int i = 0; i < m.length; i++) {
-            total += m[0][i];
+            total += m[i][i];
         }
         return total;
     }

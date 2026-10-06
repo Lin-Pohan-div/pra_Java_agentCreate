@@ -4,7 +4,7 @@ public class Switch {
         switch (day) {
             case 1:
                 return "Monday";
-            case 7
+            case 7:
                 return "Sunday";
             default:
                 return "Unknown";
@@ -20,7 +20,7 @@ public class Switch {
             case 'u':
                 return true;
             default:
-                return true;
+                return false;
         }
     }
 
@@ -31,6 +31,8 @@ public class Switch {
                 return "zero";
             case 1:
                 return "one";
+            case 2:
+                return "two";
             default:
                 return "many";
         }

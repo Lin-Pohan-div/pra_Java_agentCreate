@@ -4,7 +4,7 @@ public class Loops {
         int total = 0;
         // TODO: 把 1 到 n 加總，sumTo(5) 應該是 15
         for (int i = 1; i <= n; i++) {
-            total += i
+            total += i;
         }
         return total;
     }
@@ -13,7 +13,10 @@ public class Loops {
         int count = 0;
         // TODO: 只計算英文字母，countLetters("a1b!") 應該是 2
         for (int i = 0; i < s.length(); i++) {
-            count++;
+            char c = s.charAt(i);
+            if (Character.isLetter(c)) {
+                count++;
+            }
         }
         return count;
     }
@@ -23,6 +26,7 @@ public class Loops {
         // TODO: 從 from 每次減 1 數到 0，數出總共幾步，countDown(3) 應該是 3
         while (from > 0) {
             steps++;
+            from--;
         }
         return steps;
     }

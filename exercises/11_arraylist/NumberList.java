@@ -14,7 +14,7 @@ public class NumberList {
     public static int total(ArrayList<Integer> numbers) {
         int sum = 0;
         for (int n : numbers) {
-            sum += n
+            sum += n;
         }
         return sum;
     }
@@ -23,13 +23,19 @@ public class NumberList {
         // TODO: 每個元素乘以 2 後回傳新清單，doubled([1,2]) 要得到 [2, 4]
         ArrayList<Integer> out = new ArrayList<>();
         for (int n : numbers) {
-            out.add(n * 2)
+            out.add(n * 2);
         }
         return out;
     }
 
     public static ArrayList<Integer> evens(ArrayList<Integer> numbers) {
         // TODO: 只留下偶數，evens([1,2,3,4]) 要得到 [2, 4]
-        return numbers;
+        ArrayList<Integer> out = new ArrayList<>();
+        for (int n : numbers) {
+            if (n % 2 == 0) {
+                out.add(n);
+            }
+        }
+        return out;
     }
 }

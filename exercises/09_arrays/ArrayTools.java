@@ -12,7 +12,7 @@ public class ArrayTools {
         int best = values[0];
         for (int i = 1; i < values.length; i++) {
             if (values[i] > best) {
-                best = values[i]
+                best = values[i];
             }
         }
         return best;
@@ -21,7 +21,7 @@ public class ArrayTools {
     public static int[] doubled(int[] values) {
         int[] out = new int[values.length];
         for (int i = 0; i < values.length; i++) {
-            out[i] = values[i]
+            out[i] = values[i] * 2;
         }
         return out;
     }
