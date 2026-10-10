@@ -7,7 +7,11 @@ public class WordCount {
         Map<String, Integer> counts = new HashMap<>();
         // TODO: 依空白切字後統計每個字出現幾次（不計大小寫）
         for (String word : text.split("\\s+")) {
-            counts.put(word, counts.getOrDefault(word, 0) + 1)
+            if (word.isEmpty()) {
+                continue;
+            }
+            String key = word.toLowerCase();
+            counts.put(key, counts.getOrDefault(key, 0) + 1);
         }
         return counts;
     }
@@ -23,6 +27,6 @@ public class WordCount {
     public static double average(Map<String, Integer> counts) {
         int total = totalWords(counts);
         // TODO: 平均每個字出現幾次，{a:2,b:1} 要得到 1.5
-        return total / counts.size();
+        return (double) total / counts.size();
     }
 }
