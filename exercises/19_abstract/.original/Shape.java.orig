@@ -6,7 +6,7 @@ public abstract class Shape {
     public abstract double area();
 
     public String describe() {
-        return getClass().getSimpleName() + "(" + area() + ")";
+        return "Shape(" + area() + ")";
     }
 
     public static double totalArea(Shape[] shapes) {
@@ -30,7 +30,7 @@ class Square extends Shape {
     @Override
     public double area() {
         // TODO: 正方形面積 = 邊長 × 邊長，Square(2) 的面積應該是 4.0
-        return side * side
+        return side * side;
     }
 }
 

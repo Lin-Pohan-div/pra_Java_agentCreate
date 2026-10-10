@@ -70,7 +70,7 @@ public static int totalYearly(Employee[] staff) {
 - 子類別沒有實作全部的抽象方法
 - 建構式少了 `this.`，欄位沒有被設定
 - 彙總時對每個元素多做了規格沒要求的運算
-- `return` 陳述句漏掉分號
+- 在父類別把類別名稱寫死，子類別呼叫時印出的不是自己的名稱；用 `getClass().getSimpleName()` 取得實際型別
 
 ## 動手做
 

@@ -2,5 +2,5 @@
   "name": "抽象類別",
   "difficulty": "★★★",
   "topics": ["抽象類別", "abstract", "多型"],
-  "hint": "抽象方法用 abstract 宣告，只有宣告、沒有本體，結尾直接是分號。\n子類別必須用 @Override 實作抽象方法。\nCircle 的半徑欄位沒有存進去，是漏了 this.radius = radius。\ntotalArea 裡面 total += s.area() / 2 把每個面積砍半了，應該直接加。"
+  "hint": "抽象方法用 abstract 宣告，只有宣告、沒有本體，結尾直接是分號。\n子類別必須用 @Override 實作抽象方法。\ndescribe() 把名稱寫死成 \"Shape\"，Square 呼叫時也只會印出 Shape；用 getClass().getSimpleName() 取得實際的類別名稱。\nCircle 的半徑欄位沒有存進去，是漏了 this.radius = radius。\ntotalArea 裡面 total += s.area() / 2 把每個面積砍半了，應該直接加。"
 }
