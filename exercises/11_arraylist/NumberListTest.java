@@ -16,6 +16,7 @@ public class NumberListTest {
         TestKit.expectEquals("total([])", 0, NumberList.total(new ArrayList<Integer>()));
 
         TestKit.expectEquals("doubled([1,2])", List.of(2, 4), NumberList.doubled(new ArrayList<>(List.of(1, 2))));
+        NumberList.doubled(input);
         TestKit.expectEquals("doubled 不可改動原清單", List.of(1, 2, 3), input);
 
         TestKit.expectEquals("evens([1,2,3,4])",

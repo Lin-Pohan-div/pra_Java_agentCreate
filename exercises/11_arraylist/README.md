@@ -76,7 +76,7 @@ for (String s : fruits) {
 - 寫成 `ArrayList<int>`
 - 想篩選或轉換，卻直接回傳原本的清單
 - 用 `list.length` 或 `list[i]`，這是陣列的寫法
-- 迴圈本體的陳述句漏了分號
+- 用索引走訪時寫成 `i <= list.size()`，最後一次 `get` 會丟出 `IndexOutOfBoundsException`
 
 ## 動手做
 

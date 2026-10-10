@@ -2,5 +2,5 @@
   "name": "ArrayList",
   "difficulty": "★★",
   "topics": ["ArrayList", "泛型", "集合"],
-  "hint": "add(...)、sum(...) 少了一個分號。\nevens 要篩選：把偶數加進新的 ArrayList 然後回傳它。\n判斷偶數用 n % 2 == 0。\n不要直接回傳參數本身，否則會改到呼叫端的資料。"
+  "hint": "total 的迴圈寫成 i <= size()，最後一次 get 會超出範圍；改成 i < size()，或直接用 for-each。\ndoubled 要建立一個新的 ArrayList 放結果，不要用 set 改動傳進來的清單。\nevens 要篩選：把偶數加進新的 ArrayList 然後回傳它。\n判斷偶數用 n % 2 == 0。\n不要直接回傳參數本身，否則會改到呼叫端的資料。"
 }
