@@ -2,5 +2,5 @@
   "name": "遞迴",
   "difficulty": "★★★",
   "topics": ["遞迴", "終止條件", "演算法"],
-  "hint": "fib 少了一個分號。\ngcd 是歐幾里得演算法：gcd(a, b) = gcd(b, a % b)，\n不是 gcd(b, a)。當 b 變成 0 時，答案就是 a。\n每個遞迴都要有終止條件，不然會 StackOverflowError。"
+  "hint": "factorial 的終止條件只寫 n == 1，factorial(0) 會一路往負數遞迴、永遠停不下來；別忘了 0! 也是 1。\ngcd 是歐幾里得演算法：gcd(a, b) = gcd(b, a % b)，\n不是 gcd(b, a)。當 b 變成 0 時，答案就是 a。\n每個遞迴都要有終止條件，不然會 StackOverflowError。"
 }

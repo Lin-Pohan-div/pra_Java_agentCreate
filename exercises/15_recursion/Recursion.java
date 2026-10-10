@@ -4,7 +4,7 @@ public class Recursion {
 
     public static int factorial(int n) {
         // TODO: 回傳 n!，factorial(5) 應該是 120，factorial(0) 應該是 1
-        if (n <= 1) {
+        if (n == 1) {
             return 1;
         }
         return n * factorial(n - 1);
@@ -15,7 +15,7 @@ public class Recursion {
         if (n < 2) {
             return n;
         }
-        return fib(n - 1) + fib(n - 2)
+        return fib(n - 1) + fib(n - 2);
     }
 
     public static int sumDigits(int n) {
