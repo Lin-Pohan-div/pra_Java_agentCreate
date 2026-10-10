@@ -1,3 +1,5 @@
+// 先讀同資料夾的 README.md，再動手修改這個檔案。
+
 import java.util.ArrayList;
 
 public class NumberList {
@@ -12,6 +14,7 @@ public class NumberList {
     }
 
     public static int total(ArrayList<Integer> numbers) {
+        // TODO: 回傳清單所有元素的總和，total([1,2,3]) 應該是 6
         int sum = 0;
         for (int n : numbers) {
             sum += n

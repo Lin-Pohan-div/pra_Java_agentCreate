@@ -1,3 +1,5 @@
+// 先讀同資料夾的 README.md，再動手修改這個檔案。
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -21,6 +23,8 @@ public class Range implements Iterable<Integer> {
 
             @Override
             public boolean hasNext() {
+                // TODO: 往上數（step > 0）時 current 還沒到 end 就有下一個；
+                //       往下數（step < 0）時 current 還大於 end 就有下一個
                 return step > 0 ? current < end : current > end
             }
 

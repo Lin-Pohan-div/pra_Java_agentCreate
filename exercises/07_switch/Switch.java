@@ -1,6 +1,9 @@
+// 先讀同資料夾的 README.md，再動手修改這個檔案。
+
 public class Switch {
 
     public static String dayName(int day) {
+        // TODO: 1 回 "Monday"、7 回 "Sunday"，其他數字回 "Unknown"
         switch (day) {
             case 1:
                 return "Monday";
@@ -12,6 +15,7 @@ public class Switch {
     }
 
     public static boolean isVowel(char c) {
+        // TODO: 小寫母音 a、e、i、o、u 回 true，其他字元回 false
         switch (c) {
             case 'a':
             case 'e':

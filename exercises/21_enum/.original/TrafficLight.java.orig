@@ -1,3 +1,5 @@
+// 先讀同資料夾的 README.md，再動手修改這個檔案。
+
 public enum TrafficLight {
 
     RED, YELLOW, GREEN;

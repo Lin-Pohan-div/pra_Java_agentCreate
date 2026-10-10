@@ -1,3 +1,5 @@
+// 先讀同資料夾的 README.md，再動手修改這個檔案。
+
 public class Variables {
 
     public static int sum(int a, int b) {
@@ -11,6 +13,7 @@ public class Variables {
     }
 
     public static String describe(int n) {
+        // TODO: 回傳 "n=<n>"，describe(3) 應該是 "n=3"
         int label = n
         return "n=" + label;
     }

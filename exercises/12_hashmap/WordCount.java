@@ -1,3 +1,5 @@
+// 先讀同資料夾的 README.md，再動手修改這個檔案。
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,6 +19,7 @@ public class WordCount {
     }
 
     public static int totalWords(Map<String, Integer> counts) {
+        // TODO: 把每個字的出現次數加起來，totalWords({a:2,b:1}) 應該是 3
         int total = 0;
         for (int n : counts.values()) {
             total += n;

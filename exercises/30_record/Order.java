@@ -1,3 +1,5 @@
+// 先讀同資料夾的 README.md，再動手修改這個檔案。
+
 import java.util.List;
 
 public record Order(String id, int quantity, double unitPrice) {

@@ -1,3 +1,5 @@
+// 先讀同資料夾的 README.md，再動手修改這個檔案。
+
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -19,6 +21,7 @@ public class StudentStats {
     }
 
     public static String shoutNames(List<String> names) {
+        // TODO: 名字全部轉大寫後用 ", " 串起來，shoutNames([anna, bob]) 應該是 "ANNA, BOB"
         return names.stream()
                 .map(String::toUpperCase)
                 .collect(Collectors.joining(", "));

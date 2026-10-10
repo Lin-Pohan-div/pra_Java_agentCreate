@@ -1,3 +1,5 @@
+// 先讀同資料夾的 README.md，再動手修改這個檔案。
+
 public class Counter {
 
     // TODO: 這個欄位要放「已經建立幾個 Counter 物件」，需要 static
