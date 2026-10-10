@@ -5,8 +5,8 @@ public class Loops {
     public static int sumTo(int n) {
         int total = 0;
         // TODO: 把 1 到 n 加總，sumTo(5) 應該是 15
-        for (int i = 1; i <= n; i++) {
-            total += i
+        for (int i = 1; i < n; i++) {
+            total += i;
         }
         return total;
     }
