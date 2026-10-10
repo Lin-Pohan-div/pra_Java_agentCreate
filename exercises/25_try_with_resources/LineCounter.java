@@ -17,7 +17,7 @@ public class LineCounter {
     public static String firstLine(String path) throws IOException {
         // TODO: 回傳檔案的第一行（這是 try-with-resources 的參考寫法）
         try (BufferedReader reader = Files.newBufferedReader(Path.of(path), StandardCharsets.UTF_8)) {
-            return reader.readLine()
+            return reader.readLine();
         }
     }
 }
