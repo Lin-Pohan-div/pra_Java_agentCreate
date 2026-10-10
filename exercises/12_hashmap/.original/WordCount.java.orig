@@ -9,7 +9,7 @@ public class WordCount {
         Map<String, Integer> counts = new HashMap<>();
         // TODO: 依空白切字後統計每個字出現幾次（不計大小寫）
         for (String word : text.split("\\s+")) {
-            counts.put(word, counts.getOrDefault(word, 0) + 1)
+            counts.put(word, counts.get(word) + 1);
         }
         return counts;
     }
