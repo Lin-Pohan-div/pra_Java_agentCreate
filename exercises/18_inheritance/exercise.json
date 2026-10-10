@@ -2,5 +2,5 @@
   "name": "繼承與覆寫",
   "difficulty": "★★★",
   "topics": ["繼承", "override", "super", "多型"],
-  "hint": "Cat.speak() 少了分號。\ndescribe() 呼叫 speak() 兩次了，所以輸出會多一份。\n子類別用 super(...) 呼叫父類別建構式。\n只要物件是 Animal（或子類別），呼叫 speak() 就會執行實際型別的版本，這叫多型。"
+  "hint": "Cat 的 Speak() 大小寫拼錯，其實是另一個新方法，並沒有覆寫 speak()；加上 @Override，編譯器就會幫你抓出這種錯。\ndescribe() 呼叫 speak() 兩次了，所以輸出會多一份。\n子類別用 super(...) 呼叫父類別建構式。\n只要物件是 Animal（或子類別），呼叫 speak() 就會執行實際型別的版本，這叫多型。"
 }

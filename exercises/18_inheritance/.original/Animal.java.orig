@@ -37,9 +37,8 @@ class Cat extends Animal {
         super(name);
     }
 
-    @Override
-    public String speak() {
+    public String Speak() {
         // TODO: 貓的叫聲是 "Mew"
-        return "Mew"
+        return "Mew";
     }
 }
