@@ -27,7 +27,7 @@ public class Money {
             return false;
         }
         // TODO: 金額和貨幣都一樣才算相等
-        return amount == other.amount
+        return amount == other.amount && currency == other.currency;
     }
 
     @Override

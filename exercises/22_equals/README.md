@@ -65,7 +65,7 @@ public class Point {
 - `hashCode` 用到的欄位和 `equals` 不一致
 - 只覆寫了 `equals`，沒有覆寫 `hashCode`
 - 參數型別寫成自己的類別，結果變成重載
-- `return` 運算式寫到一半漏了分號
+- 用 `==` 比較 `String` 欄位：內容相同、但不是同一個物件時會得到 `false`
 
 ## 動手做
 

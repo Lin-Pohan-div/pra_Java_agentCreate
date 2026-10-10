@@ -11,6 +11,8 @@ public class MoneyTest {
         Money eur = new Money(100, "EUR");
 
         TestKit.expectTrue("相同金額與貨幣相等", usd.equals(same));
+        TestKit.expectTrue("貨幣字串內容相同就相等",
+                usd.equals(new Money(100, new String("USD"))));
         TestKit.expectFalse("貨幣不同不相等", usd.equals(eur));
         TestKit.expectFalse("和 null 不相等", usd.equals(null));
         TestKit.expectFalse("和字串不相等", usd.equals("100 USD"));
