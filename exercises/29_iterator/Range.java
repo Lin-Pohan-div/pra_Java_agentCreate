@@ -25,7 +25,7 @@ public class Range implements Iterable<Integer> {
             public boolean hasNext() {
                 // TODO: 往上數（step > 0）時 current 還沒到 end 就有下一個；
                 //       往下數（step < 0）時 current 還大於 end 就有下一個
-                return step > 0 ? current < end : current > end
+                return current < end;
             }
 
             @Override
