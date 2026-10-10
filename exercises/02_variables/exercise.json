@@ -2,5 +2,5 @@
   "name": "變數與整數除法",
   "difficulty": "★",
   "topics": ["變數", "型別", "整數除法"],
-  "hint": "宣告了區域變數卻沒有回傳它，編譯器會抱怨 missing return statement。\n重點：兩個 int 相除，結果仍然是 int，7 / 2 = 3 不是 3.5。\n想保留小數，其中一個運算元必須是 double。"
+  "hint": "宣告了區域變數卻沒有回傳它，編譯器會抱怨 missing return statement。\n重點：兩個 int 相除，結果仍然是 int，7 / 2 = 3 不是 3.5。\n想保留小數，其中一個運算元必須是 double。\ndescribe 的 label 宣告成 double，3 接成字串會變成 \"3.0\"；整數請用 int。"
 }
