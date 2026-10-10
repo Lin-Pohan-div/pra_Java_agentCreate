@@ -7,8 +7,8 @@ public class Rectangle {
 
     public Rectangle(double width, double height) {
         // TODO: 把參數的寬和高存進這個物件的欄位
-        this.width = width
-        this.height = height
+        width = width;
+        height = height;
     }
 
     public double area() {
