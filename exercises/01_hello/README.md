@@ -72,6 +72,7 @@ String text = "I live in " + city + ".";   // "I live in Taipei."
 ## 常見錯誤
 
 - 漏掉行尾的分號：錯誤訊息會指向**下一個** token，所以實際出錯的位置可能在回報行號的上一行
+- Java 區分大小寫：把 `String` 寫成 `string`，會得到 `cannot find symbol`
 - 回傳型別不是 `void`，卻忘了寫 `return`
 - 想用變數的值，卻把變數名稱寫進雙引號裡
 
