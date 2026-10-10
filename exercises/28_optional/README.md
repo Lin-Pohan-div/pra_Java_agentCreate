@@ -70,7 +70,7 @@ public String requireEmail(String user) {
 - 沒檢查就呼叫 `get()`
 - 丟出的例外型別或訊息內容跟規格不符
 - 回傳 `null` 給宣告為 `Optional` 的方法（應該回傳 `Optional.empty()`）
-- `return` 陳述句漏了分號
+- 值可能是 `null` 時用了 `Optional.of`，結果直接丟出 `NullPointerException`
 
 ## 動手做
 

@@ -2,5 +2,5 @@
   "name": "Optional",
   "difficulty": "★★★",
   "topics": ["Optional", "Map", "例外"],
-  "hint": "Optional.ofNullable(...) 在值是 null 時會得到 Optional.empty()。\nget() 在 Optional 是空的時候會丟出 NoSuchElementException，\n所以 require() 要先檢查 isPresent()。\nrequire() 需要丟出 IllegalArgumentException（不是 IllegalStateException），\n而且訊息必須包含 key 的名字，測試會檢查。\n寫法：if (value.isEmpty()) { throw new IllegalArgumentException(\"缺少設定: \" + key); }"
+  "hint": "Optional.of(null) 會直接丟出 NullPointerException；值可能是 null 時要用 Optional.ofNullable(...)，\n它在值是 null 時會得到 Optional.empty()。\nget() 在 Optional 是空的時候會丟出 NoSuchElementException，\n所以 require() 要先檢查 isPresent()。\nrequire() 需要丟出 IllegalArgumentException（不是 IllegalStateException），\n而且訊息必須包含 key 的名字，測試會檢查。\n寫法：if (value.isEmpty()) { throw new IllegalArgumentException(\"缺少設定: \" + key); }"
 }

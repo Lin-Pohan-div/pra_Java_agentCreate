@@ -14,7 +14,7 @@ public class Config {
 
     public Optional<String> get(String key) {
         // TODO: 沒有這個 key 時回傳 Optional.empty()
-        return Optional.ofNullable(values.get(key))
+        return Optional.of(values.get(key));
     }
 
     public String getOrDefault(String key, String fallback) {
